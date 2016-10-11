@@ -1,34 +1,39 @@
-var AlarmClock = require('./../js/alarmclock.js').alarmclockModule;
-var alarm_interval;
+var Alarm = require('./../js/alarm.js').alarmModule;
+var now = new moment();
+console.log(now.format("HH:mm:ss"));
 
-function displayAlarm() {
-  $('#alarm_dismiss').toggle();
-  alarm_interval = setInterval(function() {
-    $('#alarm_display').toggle();
-  }, 200);
-};
+$(function() {
+  var now = moment();
+  var audio = new Audio('http://onlineclock.net/sounds/?sound=Harp-Strumming');
+  $('#time').text(now);
 
-$(document).ready(function() {
+  var soundAlarm = function(time) {
+    setTimeout(function() {
+      $(".sound-alarm").show();
+      $("body").addClass("alarm");
+      audio.play();
+    }, time);
+  }
 
-  var myClock = new AlarmClock();
+  var stopAlarm = function() {
+    $(".sound-alarm").hide();
+    $("body").removeClass("alarm");
+    audio.pause();
+  }
 
-  setInterval(function(){
-    $('#time_display').text(moment().format('HH:mm:ss'));
-    if (myClock.isItAlarmTime(moment().format('HH:mm:ss'))) {
-      displayAlarm();
-    }
-  }, 1000);
-
-  $('#set_alarm').submit(function(event) {
+  $("form").submit(function(event) {
     event.preventDefault();
-    var alarm_time = $('#alarm_time').val();
-    myClock.setAlarm(alarm_time);
-    console.log(myClock.alarms);
+    var userAlarm = moment($("#alarm").val());
+    var alarm = new Alarm(userAlarm);
+    soundAlarm(alarm.alert(now));
+   });
+
+  $("#snooze").click(function(event) {
+    stopAlarm();
+    soundAlarm(30000);
   });
 
-  $('#alarm_dismiss').click(function() {
-    clearInterval(alarm_interval);
-    $('#alarm_dismiss').toggle();
-  })
-
+  $("#stopAlarm").click(function(event) {
+    stopAlarm();
+  });
 });
