@@ -1,0 +1,27 @@
+{
+  "name": "alarm-clock",
+  "description": "alarm clock app, practice",
+  "main": "index.html",
+  "authors": [
+    "Vanessa Palacios Sharma"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "alarm",
+    "clock",
+    "practice"
+  ],
+  "homepage": "https://github.com/VanessaSharma/alarmclock_javascript",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7"
+  }
+}
