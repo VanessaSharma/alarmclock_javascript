@@ -1,0 +1,24 @@
+{
+  "name": "alarm-clock",
+  "version": "1.0.0",
+  "description": "alarm clock app, practice",
+  "main": "index.html",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VanessaSharma/alarmclock_javascript.git"
+  },
+  "keywords": [
+    "alarm",
+    "clock",
+    "practice"
+  ],
+  "author": "Vanessa Palacios Sharma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VanessaSharma/alarmclock_javascript/issues"
+  },
+  "homepage": "https://github.com/VanessaSharma/alarmclock_javascript#readme"
+}
