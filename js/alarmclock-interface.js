@@ -1,8 +1,10 @@
 var Alarm = require('./../js/alarmclock.js').alarmModule;
+var audio;
 
 $(function() {
   var now = moment();
-  var audio = new Audio('http://onlineclock.net/sounds/?sound=Harp-Strumming');
+  var audio = new Audio();
+  audio.src = "audio/audio.wav";
   $('#time').text(now);
 
   var soundAlarm = function(time) {

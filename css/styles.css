@@ -5,3 +5,12 @@
 .alarm {
   background-color: #66e0ff
 }
+
+.img {
+  height: 200px;
+  width: 200px;
+}
+
+.img {
+  display: block;
+}
