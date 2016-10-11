@@ -1,6 +1,4 @@
-var Alarm = require('./../js/alarm.js').alarmModule;
-var now = new moment();
-console.log(now.format("HH:mm:ss"));
+var Alarm = require('./../js/alarmclock.js').alarmModule;
 
 $(function() {
   var now = moment();

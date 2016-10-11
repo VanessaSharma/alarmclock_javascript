@@ -21,6 +21,16 @@ var lib = require('bower-files')({
   }
 });
 
+gulp.task('vendorcss', function(){
+return gulp
+	// set source
+	.src(config.paths.vendorcss)
+	// write to vendor.min.css
+	.pipe(concat('vendor.min.css'))
+	// write to dest
+	.pipe(gulp.dest(config.paths.destination));
+});
+
 gulp.task('jsBuild', ['jsBrowserify', 'jshint'], function(){
   browserSync.reload();
 });
